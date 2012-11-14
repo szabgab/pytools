@@ -21,8 +21,10 @@ def main():
         }
         fh = open(filename, 'r')
         for line in fh.readlines():
-            count['lines'] += 1;
-            #print line,
+            count['lines'] += 1
+            count['chars'] += len(line)
+            count['words'] += len(line.split())
+
         print count['chars'], count['words'], count['lines']
         for f in count.keys():
             total[f] += count[f]
